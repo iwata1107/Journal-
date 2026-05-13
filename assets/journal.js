@@ -19,9 +19,6 @@ const VIDEO_EXTENSIONS = new Set(["m4v", "mov", "mp4", "ogv", "webm"]);
 const SHORTCUT_NAME = "機種判定";
 const ICLOUD_SHORTCUT_URL = "https://www.icloud.com/shortcuts/71338c29540343b186e7a4e159b5cfca";
 const SHORTCUT_RUN_URL = `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(SHORTCUT_NAME)}&x-error=${encodeURIComponent(ICLOUD_SHORTCUT_URL)}`;
-const QR_CODE_LIBRARY_URL = "https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js";
-
-let qrCodeLibraryPromise;
 
 function escapeHtml(value = "") {
   return value
@@ -97,7 +94,6 @@ function isDeviceModelCheckLine(value = "") {
 function renderDeviceModelCheck() {
   return `
     <section class="device-model-check" data-device-model-check>
-      <h3>端末ごとの表示テスト</h3>
       <p class="device-model-check-lead" data-device-model-message>端末情報を確認しています。</p>
       <div class="device-model-check-result" data-device-model-result></div>
     </section>
@@ -339,39 +335,6 @@ async function getAndroidModelName() {
   return parseAndroidModelFromUserAgent(navigator.userAgent || "");
 }
 
-function loadQrCodeLibrary() {
-  if (window.QRCode) return Promise.resolve();
-  if (qrCodeLibraryPromise) return qrCodeLibraryPromise;
-
-  qrCodeLibraryPromise = new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = QR_CODE_LIBRARY_URL;
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-
-  return qrCodeLibraryPromise;
-}
-
-async function renderQrCode(target, text) {
-  target.textContent = "";
-
-  try {
-    await loadQrCodeLibrary();
-    target.textContent = "";
-    new window.QRCode(target, {
-      text,
-      width: 180,
-      height: 180,
-      correctLevel: window.QRCode.CorrectLevel.M,
-    });
-  } catch (error) {
-    target.innerHTML = `<a class="device-model-fallback-link" href="${escapeHtml(text)}">${escapeHtml(text)}</a>`;
-  }
-}
-
 async function hydrateDeviceModelChecks() {
   const widgets = elements.article.querySelectorAll("[data-device-model-check]");
   if (!widgets.length) return;
@@ -397,36 +360,12 @@ async function hydrateDeviceModelChecks() {
     }
 
     if (platform.isIOS) {
-      message.textContent = "iPhone/iPadとして判定しました。Webから正確な機種名は取得できないため、ショートカット追加・実行用の導線を表示します。";
+      message.textContent = "";
       result.innerHTML = `
         <div class="device-model-ios-actions">
-          <a class="device-model-action secondary" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">ショートカットを追加する</a>
           <a class="device-model-action primary" href="${escapeHtml(SHORTCUT_RUN_URL)}">機種判定を実行する</a>
         </div>
-        <div class="device-model-qr-grid">
-          <div class="device-model-qr-card">
-            <div class="device-model-qr" data-device-model-qr-add></div>
-            <div>
-              <span class="device-model-label">初回ユーザー向け</span>
-              <strong>ショートカット追加QR</strong>
-              <p>iCloud共有リンクから <code>${escapeHtml(SHORTCUT_NAME)}</code> を追加します。</p>
-              <a class="device-model-fallback-link" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">追加リンクを開く</a>
-            </div>
-          </div>
-          <div class="device-model-qr-card">
-            <div class="device-model-qr" data-device-model-qr-run></div>
-            <div>
-              <span class="device-model-label">追加済みユーザー向け</span>
-              <strong>機種判定 実行QR</strong>
-              <p>ショートカット <code>${escapeHtml(SHORTCUT_NAME)}</code> を実行します。見つからない場合はiCloud共有リンクへ戻します。</p>
-              <a class="device-model-fallback-link" href="${escapeHtml(SHORTCUT_RUN_URL)}">機種判定を実行する</a>
-            </div>
-          </div>
-        </div>
-        <p class="device-model-check-small">記事URL: <a class="device-model-fallback-link" href="${escapeHtml(articleUrl)}">${escapeHtml(articleUrl)}</a></p>
       `;
-      await renderQrCode(result.querySelector("[data-device-model-qr-add]"), ICLOUD_SHORTCUT_URL);
-      await renderQrCode(result.querySelector("[data-device-model-qr-run]"), SHORTCUT_RUN_URL);
       return;
     }
 
@@ -435,7 +374,7 @@ async function hydrateDeviceModelChecks() {
       <div class="device-model-result-card">
         <span class="device-model-label">判定結果</span>
         <strong>iPhone/Androidではありません</strong>
-        <p>Androidでは機種名を表示し、iPhoneではショートカット導線のQRを表示します。</p>
+        <p>Androidでは機種名を表示し、iPhoneでは機種判定ボタンを表示します。</p>
       </div>
     `;
   });
