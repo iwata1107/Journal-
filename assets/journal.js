@@ -16,9 +16,7 @@ const elements = {
 
 const IMAGE_EXTENSIONS = new Set(["avif", "gif", "jpeg", "jpg", "png", "svg", "webp"]);
 const VIDEO_EXTENSIONS = new Set(["m4v", "mov", "mp4", "ogv", "webm"]);
-const SHORTCUT_NAME = "機種判定";
 const ICLOUD_SHORTCUT_URL = "https://www.icloud.com/shortcuts/71338c29540343b186e7a4e159b5cfca";
-const SHORTCUT_RUN_URL = `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(SHORTCUT_NAME)}&x-error=${encodeURIComponent(ICLOUD_SHORTCUT_URL)}`;
 
 function escapeHtml(value = "") {
   return value
@@ -363,7 +361,7 @@ async function hydrateDeviceModelChecks() {
       message.textContent = "";
       result.innerHTML = `
         <div class="device-model-ios-actions">
-          <a class="device-model-action primary" href="${escapeHtml(SHORTCUT_RUN_URL)}">機種判定を実行する</a>
+          <a class="device-model-action primary" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">機種判定を開く</a>
         </div>
       `;
       return;
