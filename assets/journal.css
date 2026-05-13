@@ -330,6 +330,130 @@ h1 {
   font-size: 0.88rem;
 }
 
+.device-model-check {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfbf8;
+  padding: 18px;
+  margin: 26px 0;
+}
+
+.device-model-check h3 {
+  margin-top: 0;
+}
+
+.device-model-check-lead {
+  color: var(--muted);
+}
+
+.device-model-check-result {
+  margin-top: 14px;
+}
+
+.device-model-result-card,
+.device-model-qr-card {
+  border: 1px solid var(--soft-line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 16px;
+}
+
+.device-model-result-card strong,
+.device-model-qr-card strong {
+  display: block;
+  margin: 2px 0 8px;
+  font-size: 1.16rem;
+  line-height: 1.35;
+}
+
+.device-model-label {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.device-model-qr-card {
+  display: grid;
+  gap: 16px;
+}
+
+.device-model-qr-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.device-model-ios-actions {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 620px) {
+  .device-model-ios-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.device-model-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.device-model-action.primary {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+}
+
+.device-model-action.secondary {
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+@media (min-width: 620px) {
+  .device-model-qr-card {
+    grid-template-columns: 200px minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.device-model-qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 198px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: #f7f9fb;
+}
+
+.device-model-qr img,
+.device-model-qr canvas {
+  max-width: 180px;
+  height: auto;
+}
+
+.device-model-fallback-link {
+  display: inline-flex;
+  border-bottom: 1px solid currentColor;
+  color: var(--accent);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.device-model-check-small {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .media-frame {
   margin: 28px 0;
 }

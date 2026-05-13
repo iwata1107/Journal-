@@ -16,6 +16,12 @@ const elements = {
 
 const IMAGE_EXTENSIONS = new Set(["avif", "gif", "jpeg", "jpg", "png", "svg", "webp"]);
 const VIDEO_EXTENSIONS = new Set(["m4v", "mov", "mp4", "ogv", "webm"]);
+const SHORTCUT_NAME = "設定一般を開く";
+const ICLOUD_SHORTCUT_URL = "https://www.icloud.com/shortcuts/71338c29540343b186e7a4e159b5cfca";
+const SHORTCUT_RUN_URL = `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(SHORTCUT_NAME)}&x-error=${encodeURIComponent(ICLOUD_SHORTCUT_URL)}`;
+const QR_CODE_LIBRARY_URL = "https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js";
+
+let qrCodeLibraryPromise;
 
 function escapeHtml(value = "") {
   return value
@@ -81,6 +87,20 @@ function renderSettingsTestLink(link) {
       <a class="settings-test-link" href="${escapeHtml(link.rawUrl)}">${renderInline(link.label)}</a>
       ${note}
     </p>
+  `;
+}
+
+function isDeviceModelCheckLine(value = "") {
+  return /^\[device-model-check\]$/i.test(value);
+}
+
+function renderDeviceModelCheck() {
+  return `
+    <section class="device-model-check" data-device-model-check>
+      <h3>端末ごとの表示テスト</h3>
+      <p class="device-model-check-lead" data-device-model-message>端末情報を確認しています。</p>
+      <div class="device-model-check-result" data-device-model-result></div>
+    </section>
   `;
 }
 
@@ -191,6 +211,12 @@ function renderMarkdown(markdown = "", entry = {}) {
       continue;
     }
 
+    if (isDeviceModelCheckLine(trimmed)) {
+      closeList();
+      html.push(renderDeviceModelCheck());
+      continue;
+    }
+
     const heading = trimmed.match(/^(#{1,3})\s+(.+)$/);
     if (heading) {
       closeList();
@@ -268,7 +294,151 @@ function selectEntry(slug, shouldUpdateHash = true) {
     <a class="source-link" href="./${escapeHtml(entry.path)}">Markdown source</a>
   `;
 
+  hydrateDeviceModelChecks();
   renderEntryList();
+}
+
+function getCurrentArticleUrl() {
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.hash = state.selectedSlug ? `#${state.selectedSlug}` : url.hash;
+  return url.toString();
+}
+
+function getPlatformInfo() {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+  const maxTouchPoints = navigator.maxTouchPoints || 0;
+
+  return {
+    isAndroid: /Android/i.test(ua),
+    isIOS: /iPhone|iPad|iPod/i.test(ua) || (platform === "MacIntel" && maxTouchPoints > 1),
+    ua,
+  };
+}
+
+function parseAndroidModelFromUserAgent(ua = "") {
+  const match = ua.match(/Android\s+[^;)]*;\s*([^;)]+?)(?:\s+Build\/|;|\))/i);
+  if (!match) return "";
+
+  const model = match[1].trim();
+  if (!model || /^K$/i.test(model)) return "";
+  return model;
+}
+
+async function getAndroidModelName() {
+  if (navigator.userAgentData?.getHighEntropyValues) {
+    try {
+      const values = await navigator.userAgentData.getHighEntropyValues(["model"]);
+      if (values.model) return values.model;
+    } catch (error) {
+      // Fall through to User-Agent parsing.
+    }
+  }
+
+  return parseAndroidModelFromUserAgent(navigator.userAgent || "");
+}
+
+function loadQrCodeLibrary() {
+  if (window.QRCode) return Promise.resolve();
+  if (qrCodeLibraryPromise) return qrCodeLibraryPromise;
+
+  qrCodeLibraryPromise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = QR_CODE_LIBRARY_URL;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+
+  return qrCodeLibraryPromise;
+}
+
+async function renderQrCode(target, text) {
+  target.textContent = "";
+
+  try {
+    await loadQrCodeLibrary();
+    target.textContent = "";
+    new window.QRCode(target, {
+      text,
+      width: 180,
+      height: 180,
+      correctLevel: window.QRCode.CorrectLevel.M,
+    });
+  } catch (error) {
+    target.innerHTML = `<a class="device-model-fallback-link" href="${escapeHtml(text)}">${escapeHtml(text)}</a>`;
+  }
+}
+
+async function hydrateDeviceModelChecks() {
+  const widgets = elements.article.querySelectorAll("[data-device-model-check]");
+  if (!widgets.length) return;
+
+  const platform = getPlatformInfo();
+  const articleUrl = getCurrentArticleUrl();
+
+  widgets.forEach(async (widget) => {
+    const message = widget.querySelector("[data-device-model-message]");
+    const result = widget.querySelector("[data-device-model-result]");
+
+    if (platform.isAndroid) {
+      const modelName = await getAndroidModelName();
+      message.textContent = "Android端末として判定しました。";
+      result.innerHTML = `
+        <div class="device-model-result-card">
+          <span class="device-model-label">機種名</span>
+          <strong>${escapeHtml(modelName || "Android端末")}</strong>
+          <p>${modelName ? "ブラウザから取得できた機種名をそのまま表示しています。" : "このブラウザでは詳細な機種名を取得できませんでした。"}</p>
+        </div>
+      `;
+      return;
+    }
+
+    if (platform.isIOS) {
+      message.textContent = "iPhone/iPadとして判定しました。Webから正確な機種名は取得できないため、ショートカット追加・実行用の導線を表示します。";
+      result.innerHTML = `
+        <div class="device-model-ios-actions">
+          <a class="device-model-action secondary" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">1. ショートカットを追加する</a>
+          <a class="device-model-action primary" href="${escapeHtml(SHORTCUT_RUN_URL)}">2. 設定の「一般」を開く</a>
+        </div>
+        <div class="device-model-qr-grid">
+          <div class="device-model-qr-card">
+            <div class="device-model-qr" data-device-model-qr-add></div>
+            <div>
+              <span class="device-model-label">初回ユーザー向け</span>
+              <strong>ショートカット追加QR</strong>
+              <p>iCloudの共有ショートカットを追加します。</p>
+              <a class="device-model-fallback-link" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">追加リンクを開く</a>
+            </div>
+          </div>
+          <div class="device-model-qr-card">
+            <div class="device-model-qr" data-device-model-qr-run></div>
+            <div>
+              <span class="device-model-label">追加済みユーザー向け</span>
+              <strong>実行QR</strong>
+              <p>ショートカット <code>${escapeHtml(SHORTCUT_NAME)}</code> を実行します。見つからない場合はiCloudの追加リンクへ戻します。</p>
+              <a class="device-model-fallback-link" href="${escapeHtml(SHORTCUT_RUN_URL)}">設定の「一般」を開く</a>
+            </div>
+          </div>
+        </div>
+        <p class="device-model-check-small">記事URL: <a class="device-model-fallback-link" href="${escapeHtml(articleUrl)}">${escapeHtml(articleUrl)}</a></p>
+      `;
+      await renderQrCode(result.querySelector("[data-device-model-qr-add]"), ICLOUD_SHORTCUT_URL);
+      await renderQrCode(result.querySelector("[data-device-model-qr-run]"), SHORTCUT_RUN_URL);
+      return;
+    }
+
+    message.textContent = "PCまたは判定対象外の端末として表示しています。";
+    result.innerHTML = `
+      <div class="device-model-result-card">
+        <span class="device-model-label">判定結果</span>
+        <strong>iPhone/Androidではありません</strong>
+        <p>Androidでは機種名を表示し、iPhoneではショートカット導線のQRを表示します。</p>
+      </div>
+    `;
+  });
 }
 
 function renderTags() {
