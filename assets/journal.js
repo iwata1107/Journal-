@@ -56,6 +56,34 @@ function parseMediaLine(value = "") {
   return null;
 }
 
+function parseSettingsTestLinkLine(value = "") {
+  const match = value.match(/^\[settings-test:\s*([^\]]+)\]\((\S+?)(?:\s+"([^"]+)")?\)$/i);
+  if (!match) return null;
+
+  return {
+    label: match[1],
+    rawUrl: match[2],
+    note: match[3] || "",
+  };
+}
+
+function isAllowedSettingsTestUrl(rawUrl = "") {
+  return /^(prefs|app-prefs):/i.test(rawUrl) && !/[\s"'<>]/.test(rawUrl);
+}
+
+function renderSettingsTestLink(link) {
+  if (!isAllowedSettingsTestUrl(link.rawUrl)) return "";
+
+  const note = link.note ? `<span class="settings-test-note">${renderInline(link.note)}</span>` : "";
+
+  return `
+    <p class="settings-test-row">
+      <a class="settings-test-link" href="${escapeHtml(link.rawUrl)}">${renderInline(link.label)}</a>
+      ${note}
+    </p>
+  `;
+}
+
 function getExtension(url = "") {
   const pathname = url.split(/[?#]/)[0];
   const extension = pathname.split(".").pop();
@@ -153,6 +181,13 @@ function renderMarkdown(markdown = "", entry = {}) {
     if (media) {
       closeList();
       html.push(renderMedia(media, entry));
+      continue;
+    }
+
+    const settingsTestLink = parseSettingsTestLinkLine(trimmed);
+    if (settingsTestLink) {
+      closeList();
+      html.push(renderSettingsTestLink(settingsTestLink));
       continue;
     }
 

@@ -301,6 +301,35 @@ h1 {
   margin-bottom: 6px;
 }
 
+.settings-test-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.settings-test-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  background: var(--accent);
+  padding: 8px 13px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.settings-test-link:hover {
+  background: #185544;
+}
+
+.settings-test-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 .media-frame {
   margin: 28px 0;
 }
