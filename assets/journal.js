@@ -16,9 +16,7 @@ const elements = {
 
 const IMAGE_EXTENSIONS = new Set(["avif", "gif", "jpeg", "jpg", "png", "svg", "webp"]);
 const VIDEO_EXTENSIONS = new Set(["m4v", "mov", "mp4", "ogv", "webm"]);
-const SHORTCUT_NAME = "設定一般を開く";
 const ICLOUD_SHORTCUT_URL = "https://www.icloud.com/shortcuts/71338c29540343b186e7a4e159b5cfca";
-const SHORTCUT_RUN_URL = `shortcuts://x-callback-url/run-shortcut?name=${encodeURIComponent(SHORTCUT_NAME)}&x-error=${encodeURIComponent(ICLOUD_SHORTCUT_URL)}`;
 const QR_CODE_LIBRARY_URL = "https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js";
 
 let qrCodeLibraryPromise;
@@ -397,36 +395,25 @@ async function hydrateDeviceModelChecks() {
     }
 
     if (platform.isIOS) {
-      message.textContent = "iPhone/iPadとして判定しました。Webから正確な機種名は取得できないため、ショートカット追加・実行用の導線を表示します。";
+      message.textContent = "iPhone/iPadとして判定しました。Webから正確な機種名は取得できないため、機種情報を確認するショートカットだけを表示します。";
       result.innerHTML = `
         <div class="device-model-ios-actions">
-          <a class="device-model-action secondary" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">1. ショートカットを追加する</a>
-          <a class="device-model-action primary" href="${escapeHtml(SHORTCUT_RUN_URL)}">2. 設定の「一般」を開く</a>
+          <a class="device-model-action primary" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">ショートカットを追加する</a>
         </div>
         <div class="device-model-qr-grid">
           <div class="device-model-qr-card">
             <div class="device-model-qr" data-device-model-qr-add></div>
             <div>
-              <span class="device-model-label">初回ユーザー向け</span>
-              <strong>ショートカット追加QR</strong>
-              <p>iCloudの共有ショートカットを追加します。</p>
-              <a class="device-model-fallback-link" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">追加リンクを開く</a>
-            </div>
-          </div>
-          <div class="device-model-qr-card">
-            <div class="device-model-qr" data-device-model-qr-run></div>
-            <div>
-              <span class="device-model-label">追加済みユーザー向け</span>
-              <strong>実行QR</strong>
-              <p>ショートカット <code>${escapeHtml(SHORTCUT_NAME)}</code> を実行します。見つからない場合はiCloudの追加リンクへ戻します。</p>
-              <a class="device-model-fallback-link" href="${escapeHtml(SHORTCUT_RUN_URL)}">設定の「一般」を開く</a>
+              <span class="device-model-label">iPhone向け</span>
+              <strong>機種情報確認ショートカット</strong>
+              <p>このiCloud共有リンクだけを使います。iPhoneで開いてショートカットを追加し、機種情報を確認します。</p>
+              <a class="device-model-fallback-link" href="${escapeHtml(ICLOUD_SHORTCUT_URL)}">ショートカットを開く</a>
             </div>
           </div>
         </div>
         <p class="device-model-check-small">記事URL: <a class="device-model-fallback-link" href="${escapeHtml(articleUrl)}">${escapeHtml(articleUrl)}</a></p>
       `;
       await renderQrCode(result.querySelector("[data-device-model-qr-add]"), ICLOUD_SHORTCUT_URL);
-      await renderQrCode(result.querySelector("[data-device-model-qr-run]"), SHORTCUT_RUN_URL);
       return;
     }
 

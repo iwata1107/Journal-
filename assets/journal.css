@@ -390,7 +390,7 @@ h1 {
 
 @media (min-width: 620px) {
   .device-model-ios-actions {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
