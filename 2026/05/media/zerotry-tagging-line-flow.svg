@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780" role="img" aria-labelledby="title desc">
+  <title id="title">タギングラインの処理フロー</title>
+  <desc id="desc">商品投入からSKU識別、RFID発行、ラベル貼付、検査読取、不良排出、箱詰めまでのライン工程。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="780" fill="#fbfbf8"/>
+  <text x="64" y="74" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">タギングラインは「貼る」より「貼ったあと読める」を設計する</text>
+  <text x="66" y="112" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">ライン化では、商品姿勢、ラベル位置、検査読取、NG排出を固定して再現性を作る。</text>
+
+  <rect x="64" y="570" width="1152" height="58" rx="14" fill="#d8d8cf"/>
+  <rect x="88" y="588" width="1104" height="20" rx="10" fill="#bfc3b9"/>
+  <g fill="#8f968b">
+    <circle cx="150" cy="599" r="25"/>
+    <circle cx="300" cy="599" r="25"/>
+    <circle cx="450" cy="599" r="25"/>
+    <circle cx="600" cy="599" r="25"/>
+    <circle cx="750" cy="599" r="25"/>
+    <circle cx="900" cy="599" r="25"/>
+    <circle cx="1050" cy="599" r="25"/>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="72" y="220" width="145" height="105" rx="12" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="104" y="263" fill="#333333" font-size="20" font-weight="700">商品投入</text>
+    <text x="101" y="294" fill="#6b6b63" font-size="15">入口センサー</text>
+
+    <rect x="250" y="220" width="145" height="105" rx="12" fill="#e8edf8" stroke="#98a9cf" stroke-width="2"/>
+    <text x="285" y="263" fill="#253c67" font-size="20" font-weight="700">SKU識別</text>
+    <text x="274" y="294" fill="#2f456f" font-size="15">バーコード/画像</text>
+
+    <rect x="428" y="220" width="145" height="105" rx="12" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <text x="460" y="263" fill="#5c4515" font-size="20" font-weight="700">タグ発行</text>
+    <text x="454" y="294" fill="#604a20" font-size="15">印字/エンコード</text>
+
+    <rect x="606" y="220" width="145" height="105" rx="12" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <text x="641" y="263" fill="#173d34" font-size="20" font-weight="700">貼付</text>
+    <text x="632" y="294" fill="#27483f" font-size="15">剥離/圧着</text>
+
+    <rect x="784" y="220" width="145" height="105" rx="12" fill="#f2e8ef" stroke="#c49ab4" stroke-width="2"/>
+    <text x="817" y="263" fill="#653a55" font-size="20" font-weight="700">検査読取</text>
+    <text x="813" y="294" fill="#6b455d" font-size="15">EPC/SKU照合</text>
+
+    <rect x="962" y="220" width="145" height="105" rx="12" fill="#fde7df" stroke="#d29a85" stroke-width="2"/>
+    <text x="1005" y="263" fill="#7a3d28" font-size="20" font-weight="700">NG排出</text>
+    <text x="993" y="294" fill="#7a4a3a" font-size="15">読めない品を分ける</text>
+
+    <rect x="1080" y="430" width="145" height="105" rx="12" fill="#e8f0d9" stroke="#9ebd76" stroke-width="2"/>
+    <text x="1119" y="473" fill="#496820" font-size="20" font-weight="700">OK出荷</text>
+    <text x="1111" y="504" fill="#536d2e" font-size="15">箱詰め/棚入れ</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M220 272 H242"/>
+    <path d="M398 272 H420"/>
+    <path d="M576 272 H598"/>
+    <path d="M754 272 H776"/>
+    <path d="M932 272 H954"/>
+    <path d="M1034 330 V420 H1149"/>
+  </g>
+
+  <rect x="116" y="392" width="880" height="92" rx="14" fill="#173d34"/>
+  <text x="148" y="432" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="22" font-weight="700">ラインの判断基準</text>
+  <text x="148" y="466" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="17">読取率、誤読率、貼付位置、サイクルタイム、NG排出成功率、停止からの復旧時間をログで測る。</text>
+</svg>

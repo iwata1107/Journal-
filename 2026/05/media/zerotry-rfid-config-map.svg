@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">RFID設定で躓きやすい場所</title>
+  <desc id="desc">RFIDプリンタ、リーダー、アンテナ、サーバー、POSで躓きやすい設定項目の一覧。</desc>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="74" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">躓くのは機材より設定。だから設定を製品化する</text>
+  <text x="66" y="112" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">zerotryは、RFIDを「読めるかどうか」ではなく「現場で安定して再現できるか」まで面倒を見る。</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="72" y="178" width="340" height="190" rx="16" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <text x="106" y="224" fill="#5c4515" font-size="24" font-weight="700">RFIDプリンタ</text>
+    <text x="106" y="264" fill="#604a20" font-size="17">inlay位置 / write power</text>
+    <text x="106" y="294" fill="#604a20" font-size="17">retry / void / label gap</text>
+    <text x="106" y="324" fill="#604a20" font-size="17">印字とEPCの不一致</text>
+
+    <rect x="470" y="178" width="340" height="190" rx="16" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <text x="504" y="224" fill="#173d34" font-size="24" font-weight="700">リーダー</text>
+    <text x="504" y="264" fill="#27483f" font-size="17">地域設定 / LBT / 出力</text>
+    <text x="504" y="294" fill="#27483f" font-size="17">session / Q / duplicate filter</text>
+    <text x="504" y="324" fill="#27483f" font-size="17">時刻、IP、証明書、firmware</text>
+
+    <rect x="868" y="178" width="340" height="190" rx="16" fill="#f2e8ef" stroke="#c49ab4" stroke-width="2"/>
+    <text x="902" y="224" fill="#653a55" font-size="24" font-weight="700">アンテナ/タグ</text>
+    <text x="902" y="264" fill="#6b455d" font-size="17">距離 / 向き / 偏波</text>
+    <text x="902" y="294" fill="#6b455d" font-size="17">金属 / 水 / 密集商品</text>
+    <text x="902" y="324" fill="#6b455d" font-size="17">隣の商品の誤読</text>
+
+    <rect x="270" y="442" width="340" height="190" rx="16" fill="#e8edf8" stroke="#98a9cf" stroke-width="2"/>
+    <text x="304" y="488" fill="#253c67" font-size="24" font-weight="700">サーバー</text>
+    <text x="304" y="528" fill="#2f456f" font-size="17">EPC採番 / 重複防止</text>
+    <text x="304" y="558" fill="#2f456f" font-size="17">RSSI、アンテナ番号、時刻</text>
+    <text x="304" y="588" fill="#2f456f" font-size="17">イベントの二重登録防止</text>
+
+    <rect x="670" y="442" width="340" height="190" rx="16" fill="#e8f0d9" stroke="#9ebd76" stroke-width="2"/>
+    <text x="704" y="488" fill="#496820" font-size="24" font-weight="700">POS/商品マスタ</text>
+    <text x="704" y="528" fill="#536d2e" font-size="17">SKU / barcode / serial</text>
+    <text x="704" y="558" fill="#536d2e" font-size="17">返品、再発行、削除</text>
+    <text x="704" y="588" fill="#536d2e" font-size="17">会計と在庫イベントの整合</text>
+  </g>
+</svg>

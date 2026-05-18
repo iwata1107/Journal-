@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">zerotryリーダーモジュール基板</title>
+  <desc id="desc">RAIN RFIDリーダーモジュールを中心に、電源、保護回路、アンテナ、MCU、Linux、GPIO、ネットワークをつなぐキャリア基板。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="70" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">リーダー基板は、RFチップ自作ではなくキャリア基板から始める</text>
+  <text x="66" y="108" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">既存RAIN RFIDモジュールを現場で使える装置にするため、電源、保護、通信、GPIO、筐体固定を整える。</text>
+
+  <rect x="88" y="152" width="1104" height="538" rx="24" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+  <rect x="430" y="302" width="420" height="150" rx="16" fill="#173d34"/>
+  <text x="506" y="358" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="28" font-weight="700">RAIN RFID module</text>
+  <text x="503" y="398" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">既製モジュール/評価済み無線部</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="140" y="220" width="230" height="105" rx="12" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <text x="171" y="264" fill="#5c4515" font-size="22" font-weight="700">12V/24V入力</text>
+    <text x="171" y="295" fill="#604a20" font-size="16">逆接・ヒューズ・TVS</text>
+
+    <rect x="140" y="420" width="230" height="105" rx="12" fill="#e8edf8" stroke="#98a9cf" stroke-width="2"/>
+    <text x="180" y="464" fill="#253c67" font-size="22" font-weight="700">MCU/Linux</text>
+    <text x="171" y="495" fill="#2f456f" font-size="16">設定保存・API・OTA</text>
+
+    <rect x="525" y="555" width="230" height="92" rx="12" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <text x="565" y="593" fill="#173d34" font-size="22" font-weight="700">GPIO/現場I/O</text>
+    <text x="555" y="623" fill="#27483f" font-size="16">センサー、LED、ブザー、リレー</text>
+
+    <rect x="910" y="220" width="230" height="105" rx="12" fill="#f2e8ef" stroke="#c49ab4" stroke-width="2"/>
+    <text x="966" y="264" fill="#653a55" font-size="22" font-weight="700">アンテナ</text>
+    <text x="942" y="295" fill="#6b455d" font-size="16">SMA/RP-TNC、切替</text>
+
+    <rect x="910" y="420" width="230" height="105" rx="12" fill="#e8f0d9" stroke="#9ebd76" stroke-width="2"/>
+    <text x="943" y="464" fill="#496820" font-size="22" font-weight="700">通信ポート</text>
+    <text x="937" y="495" fill="#536d2e" font-size="16">Ethernet、USB-C、RS-485</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M372 272 H420"/>
+    <path d="M372 472 H420"/>
+    <path d="M640 452 V545"/>
+    <path d="M850 272 H900"/>
+    <path d="M850 472 H900"/>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" fill="#6b6b63" font-size="15">
+    <text x="610" y="188">基板の価値は「現場で壊れにくく、設定でき、ログが取れる」こと</text>
+    <text x="456" y="266">安定電源</text>
+    <text x="456" y="494">制御</text>
+    <text x="663" y="512">入出力</text>
+    <text x="858" y="252">RF</text>
+    <text x="858" y="452">接続</text>
+  </g>
+</svg>

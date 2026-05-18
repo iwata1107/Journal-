@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">zerotryハードウェアロードマップ</title>
+  <desc id="desc">POS横のRFIDステーションからリーダー基板、半自動ワークセル、タギングライン、ロボットへ進む段階的な開発順序。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#16231f" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="#f7f7f4"/>
+  <rect x="44" y="42" width="1192" height="636" rx="22" fill="#ffffff" stroke="#deded8"/>
+  <text x="86" y="105" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">zerotryのハードウェアは、POS横の小さい装置から始める</text>
+  <text x="88" y="142" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">ロボットを最初に作らず、タグ発行・読取・検査・データ連携の最小ループを先に固める。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="86" y="220" width="190" height="205" rx="14" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <rect x="320" y="220" width="190" height="205" rx="14" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <rect x="554" y="220" width="190" height="205" rx="14" fill="#e8edf8" stroke="#96a8cf" stroke-width="2"/>
+    <rect x="788" y="220" width="190" height="205" rx="14" fill="#f2e8ef" stroke="#c49ab4" stroke-width="2"/>
+    <rect x="1022" y="220" width="170" height="205" rx="14" fill="#e8f0d9" stroke="#9ebd76" stroke-width="2"/>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <text x="116" y="265" fill="#173d34" font-size="24" font-weight="700">1. POS横</text>
+    <text x="116" y="302" fill="#27483f" font-size="17">RFIDタグ発行</text>
+    <text x="116" y="331" fill="#27483f" font-size="17">読取パッド</text>
+    <text x="116" y="360" fill="#27483f" font-size="17">SKU/EPC検査</text>
+
+    <text x="350" y="265" fill="#5c4515" font-size="24" font-weight="700">2. 基板</text>
+    <text x="350" y="302" fill="#604a20" font-size="17">リーダーモジュール</text>
+    <text x="350" y="331" fill="#604a20" font-size="17">電源・GPIO</text>
+    <text x="350" y="360" fill="#604a20" font-size="17">Ethernet/USB</text>
+
+    <text x="584" y="265" fill="#253c67" font-size="24" font-weight="700">3. 半自動</text>
+    <text x="584" y="302" fill="#2f456f" font-size="17">プリンタ</text>
+    <text x="584" y="331" fill="#2f456f" font-size="17">治具</text>
+    <text x="584" y="360" fill="#2f456f" font-size="17">フットスイッチ</text>
+
+    <text x="818" y="265" fill="#653a55" font-size="24" font-weight="700">4. ライン</text>
+    <text x="818" y="302" fill="#6b455d" font-size="17">コンベア</text>
+    <text x="818" y="331" fill="#6b455d" font-size="17">貼付機</text>
+    <text x="818" y="360" fill="#6b455d" font-size="17">検査・NG排出</text>
+
+    <text x="1052" y="265" fill="#496820" font-size="24" font-weight="700">5. ロボット</text>
+    <text x="1052" y="302" fill="#536d2e" font-size="17">画像認識</text>
+    <text x="1052" y="331" fill="#536d2e" font-size="17">吸着ヘッド</text>
+    <text x="1052" y="360" fill="#536d2e" font-size="17">姿勢補正</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M280 322 H312"/>
+    <path d="M514 322 H546"/>
+    <path d="M748 322 H780"/>
+    <path d="M982 322 H1014"/>
+  </g>
+
+  <rect x="86" y="492" width="1106" height="92" rx="16" fill="#173d34"/>
+  <text x="120" y="535" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="23" font-weight="700">最初の価値</text>
+  <text x="120" y="568" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">商品を選ぶ → EPCを発行 → RFIDラベルを印字/エンコード → 読む → SKUと照合 → POS/在庫へ記録</text>
+</svg>
