@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">EVT DVT PVT 検証段階</title>
+  <desc id="desc">ハードウェア検証をEVT、DVT、PVTの3段階で整理する図</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5f7f6; }
+      .title { font: 700 54px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #17202a; }
+      .subtitle { font: 400 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #526273; }
+      .stage { fill: #ffffff; stroke: #d4dee5; stroke-width: 3; }
+      .stage-title { font: 800 46px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #17202a; }
+      .stage-sub { font: 700 23px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #2f7f8f; }
+      .item { font: 400 22px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #415160; }
+      .badge { font: 700 18px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #ffffff; }
+      .arrow { stroke: #2f7f8f; stroke-width: 8; fill: none; stroke-linecap: round; }
+      .warn { fill: #fff5df; stroke: #e8b85c; stroke-width: 3; }
+      .warn-text { font: 700 24px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #735015; }
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M 0 0 L 12 7 L 0 14 z" fill="#2f7f8f"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">検証は「動くか」から「量産できるか」へ進む</text>
+  <text class="subtitle" x="82" y="142">初心者はまずEVTだけでいい。電源投入前の確認とログ取得から始める。</text>
+
+  <rect class="stage" x="80" y="235" width="430" height="445" rx="28"/>
+  <circle cx="137" cy="292" r="29" fill="#2f7f8f"/>
+  <text class="badge" x="128" y="299">1</text>
+  <text class="stage-title" x="175" y="307">EVT</text>
+  <text class="stage-sub" x="115" y="365">Engineering Validation Test</text>
+  <text class="item" x="120" y="425">・電源が入るか</text>
+  <text class="item" x="120" y="470">・ファームを書けるか</text>
+  <text class="item" x="120" y="515">・センサーが読めるか</text>
+  <text class="item" x="120" y="560">・通信できるか</text>
+  <text class="item" x="120" y="605">・ケースに入るか</text>
+
+  <path class="arrow" d="M 540 455 H 635" marker-end="url(#arrowhead)"/>
+
+  <rect class="stage" x="665" y="235" width="430" height="445" rx="28"/>
+  <circle cx="722" cy="292" r="29" fill="#2f7f8f"/>
+  <text class="badge" x="713" y="299">2</text>
+  <text class="stage-title" x="760" y="307">DVT</text>
+  <text class="stage-sub" x="700" y="365">Design Validation Test</text>
+  <text class="item" x="705" y="425">・温度と発熱</text>
+  <text class="item" x="705" y="470">・落下、振動、固定</text>
+  <text class="item" x="705" y="515">・電源変動、ノイズ</text>
+  <text class="item" x="705" y="560">・長時間稼働</text>
+  <text class="item" x="705" y="605">・誤操作と復旧</text>
+
+  <path class="arrow" d="M 1125 455 H 1220" marker-end="url(#arrowhead)"/>
+
+  <rect class="stage" x="1250" y="235" width="270" height="445" rx="28"/>
+  <circle cx="1307" cy="292" r="29" fill="#2f7f8f"/>
+  <text class="badge" x="1298" y="299">3</text>
+  <text class="stage-title" x="1345" y="307">PVT</text>
+  <text class="stage-sub" x="1288" y="365">Production</text>
+  <text class="stage-sub" x="1288" y="395">Validation Test</text>
+  <text class="item" x="1290" y="455">・同じ品質で</text>
+  <text class="item" x="1307" y="490">作れるか</text>
+  <text class="item" x="1290" y="545">・検査治具で</text>
+  <text class="item" x="1307" y="580">早く確認</text>
+  <text class="item" x="1290" y="635">・保守と交換</text>
+
+  <rect class="warn" x="160" y="735" width="1280" height="80" rx="24"/>
+  <text class="warn-text" x="205" y="786">最初の合格条件: 「壊さず電源を入れられる」「ログで状態が見える」「同じ手順で再現できる」</text>
+</svg>

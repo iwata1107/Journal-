@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">基板設計の基本用語マップ</title>
+  <desc id="desc">回路図、フットプリント、ネット、ERC、DRC、Gerber、BOM、CPLの関係</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .title { font: 700 54px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #1d252d; }
+      .subtitle { font: 400 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #596775; }
+      .panel { fill: #ffffff; stroke: #d9d3c7; stroke-width: 3; }
+      .label { font: 700 30px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #1d252d; }
+      .body { font: 400 21px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #465463; }
+      .small { font: 500 18px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #465463; }
+      .chip { fill: #263238; }
+      .pin { fill: #d7b66d; }
+      .trace { stroke: #10a37f; stroke-width: 9; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wire { stroke: #4d8fb8; stroke-width: 5; fill: none; stroke-linecap: round; }
+      .arrow { stroke: #2f7f8f; stroke-width: 7; stroke-linecap: round; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M 0 0 L 12 7 L 0 14 z" fill="#2f7f8f"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">基板設計の言葉は、この関係で見ると怖くない</text>
+  <text class="subtitle" x="82" y="142">回路図で「つながり」を決め、フットプリントで「実物の足形」に変え、PCBで「物理配置」にする。</text>
+
+  <rect class="panel" x="75" y="215" width="430" height="415" rx="24"/>
+  <text class="label" x="115" y="275">回路図</text>
+  <text class="body" x="115" y="316">どのピン同士がつながるか</text>
+  <text class="body" x="115" y="348">電気的な関係を書く</text>
+  <circle cx="165" cy="445" r="36" fill="#e9f4f1" stroke="#10a37f" stroke-width="4"/>
+  <text class="small" x="145" y="452">MCU</text>
+  <rect x="290" y="405" width="95" height="80" rx="12" fill="#f2efe9" stroke="#d0b26c" stroke-width="4"/>
+  <text class="small" x="309" y="452">センサー</text>
+  <path class="wire" d="M 201 430 C 245 390, 270 395, 290 420"/>
+  <path class="wire" d="M 201 460 C 245 500, 270 495, 290 470"/>
+  <text class="small" x="220" y="392">ネット</text>
+
+  <path class="arrow" d="M 535 425 H 650" marker-end="url(#arrowhead)"/>
+  <text class="small" x="545" y="388">部品ごとに</text>
+  <text class="small" x="540" y="414">足形を割り当てる</text>
+
+  <rect class="panel" x="690" y="215" width="260" height="415" rx="24"/>
+  <text class="label" x="730" y="275">フット</text>
+  <text class="label" x="730" y="312">プリント</text>
+  <text class="body" x="730" y="358">実物の部品を</text>
+  <text class="body" x="730" y="390">置くための寸法</text>
+  <rect x="760" y="465" width="120" height="72" rx="8" fill="#ffffff" stroke="#d0b26c" stroke-width="5"/>
+  <rect class="pin" x="745" y="478" width="18" height="14" rx="3"/>
+  <rect class="pin" x="745" y="510" width="18" height="14" rx="3"/>
+  <rect class="pin" x="877" y="478" width="18" height="14" rx="3"/>
+  <rect class="pin" x="877" y="510" width="18" height="14" rx="3"/>
+
+  <path class="arrow" d="M 980 425 H 1095" marker-end="url(#arrowhead)"/>
+  <text class="small" x="990" y="388">配置して</text>
+  <text class="small" x="988" y="414">線を引く</text>
+
+  <rect class="panel" x="1135" y="215" width="390" height="415" rx="24"/>
+  <text class="label" x="1175" y="275">PCB</text>
+  <text class="body" x="1175" y="316">基板上に部品を置き</text>
+  <text class="body" x="1175" y="348">銅の配線でつなぐ</text>
+  <rect x="1210" y="405" width="245" height="150" rx="20" fill="#176b45" stroke="#0f4c33" stroke-width="5"/>
+  <rect class="chip" x="1285" y="445" width="80" height="62" rx="8"/>
+  <circle cx="1245" cy="435" r="12" fill="#d7b66d"/>
+  <circle cx="1420" cy="525" r="12" fill="#d7b66d"/>
+  <path class="trace" d="M 1245 435 H 1285"/>
+  <path class="trace" d="M 1365 478 C 1405 478, 1405 525, 1420 525"/>
+  <path class="trace" d="M 1245 510 H 1285"/>
+  <text class="small" x="1215" y="590">この形を工場に渡す</text>
+
+  <rect class="panel" x="120" y="690" width="300" height="115" rx="22"/>
+  <text class="label" x="155" y="742">ERC</text>
+  <text class="body" x="155" y="775">回路図のミス検出</text>
+
+  <rect class="panel" x="465" y="690" width="300" height="115" rx="22"/>
+  <text class="label" x="500" y="742">DRC</text>
+  <text class="body" x="500" y="775">製造できない形を検出</text>
+
+  <rect class="panel" x="810" y="690" width="300" height="115" rx="22"/>
+  <text class="label" x="845" y="742">Gerber</text>
+  <text class="body" x="845" y="775">基板工場に渡す図面</text>
+
+  <rect class="panel" x="1155" y="690" width="300" height="115" rx="22"/>
+  <text class="label" x="1190" y="742">BOM / CPL</text>
+  <text class="body" x="1190" y="775">部品表と配置データ</text>
+</svg>

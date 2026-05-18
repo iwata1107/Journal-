@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">最初の30日ロードマップ</title>
+  <desc id="desc">ESP32センサーロガーを題材にハードウェア開発を30日で一周するロードマップ</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .title { font: 700 54px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #16202b; }
+      .subtitle { font: 400 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #526273; }
+      .week { fill: #ffffff; stroke: #d3dde8; stroke-width: 3; }
+      .week-num { font: 800 34px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #ffffff; }
+      .week-title { font: 700 30px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #16202b; }
+      .body { font: 400 21px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #465463; }
+      .deliver { font: 700 20px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #106b5c; }
+      .line { stroke: #2aa6b8; stroke-width: 8; stroke-linecap: round; fill: none; }
+      .dot { fill: #2aa6b8; }
+      .loop { stroke: #f0a43a; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .note { font: 700 24px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #765414; }
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M 0 0 L 12 7 L 0 14 z" fill="#f0a43a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">最初の30日は「ESP32センサーロガー」で一周する</text>
+  <text class="subtitle" x="82" y="142">小さい題材でも、センサー、通信、サーバー、ケース、基板、検証まで一通り触れる。</text>
+
+  <path class="line" d="M 180 430 H 1420"/>
+  <circle class="dot" cx="250" cy="430" r="18"/>
+  <circle class="dot" cx="620" cy="430" r="18"/>
+  <circle class="dot" cx="990" cy="430" r="18"/>
+  <circle class="dot" cx="1360" cy="430" r="18"/>
+
+  <g transform="translate(95,245)">
+    <rect class="week" x="0" y="0" width="310" height="285" rx="24"/>
+    <circle cx="58" cy="62" r="36" fill="#2aa6b8"/>
+    <text class="week-num" x="48" y="74">1</text>
+    <text class="week-title" x="110" y="70">開発ボード</text>
+    <text class="body" x="38" y="128">LED点滅</text>
+    <text class="body" x="38" y="166">温湿度センサー</text>
+    <text class="body" x="38" y="204">シリアルログ</text>
+    <text class="deliver" x="38" y="252">成果: 値が読める</text>
+  </g>
+
+  <g transform="translate(465,245)">
+    <rect class="week" x="0" y="0" width="310" height="285" rx="24"/>
+    <circle cx="58" cy="62" r="36" fill="#2aa6b8"/>
+    <text class="week-num" x="48" y="74">2</text>
+    <text class="week-title" x="110" y="70">サーバー</text>
+    <text class="body" x="38" y="128">HTTP / MQTT</text>
+    <text class="body" x="38" y="166">Postgres保存</text>
+    <text class="body" x="38" y="204">Grafana可視化</text>
+    <text class="deliver" x="38" y="252">成果: ログが残る</text>
+  </g>
+
+  <g transform="translate(835,245)">
+    <rect class="week" x="0" y="0" width="310" height="285" rx="24"/>
+    <circle cx="58" cy="62" r="36" fill="#2aa6b8"/>
+    <text class="week-num" x="48" y="74">3</text>
+    <text class="week-title" x="110" y="70">形を作る</text>
+    <text class="body" x="38" y="128">Fusion / Onshape</text>
+    <text class="body" x="38" y="166">3Dプリント</text>
+    <text class="body" x="38" y="204">ネジ穴とケーブル</text>
+    <text class="deliver" x="38" y="252">成果: ケースに入る</text>
+  </g>
+
+  <g transform="translate(1205,245)">
+    <rect class="week" x="0" y="0" width="310" height="285" rx="24"/>
+    <circle cx="58" cy="62" r="36" fill="#2aa6b8"/>
+    <text class="week-num" x="48" y="74">4</text>
+    <text class="week-title" x="110" y="70">基板化</text>
+    <text class="body" x="38" y="128">KiCad回路図</text>
+    <text class="body" x="38" y="166">ERC / DRC</text>
+    <text class="body" x="38" y="204">Gerber発注</text>
+    <text class="deliver" x="38" y="252">成果: PCBを注文</text>
+  </g>
+
+  <path class="loop" d="M 1370 575 C 1250 735, 390 735, 250 575" marker-end="url(#arrowhead)"/>
+  <text class="note" x="460" y="775">基板が届いたら、測って、壊れた理由を記録して、次の版で直す。</text>
+</svg>

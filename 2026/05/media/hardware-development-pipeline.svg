@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ハードウェア開発パイプライン</title>
+  <desc id="desc">アイデアから開発ボード、CAD、基板、ファームウェア、サーバー、検証、製造までの流れ</desc>
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 700 54px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #17202a; }
+      .subtitle { font: 400 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #526273; }
+      .lane { fill: #ffffff; stroke: #d9e2ec; stroke-width: 3; }
+      .card { fill: #ffffff; stroke: #c9d5e1; stroke-width: 3; }
+      .card-title { font: 700 24px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #17202a; }
+      .card-body { font: 400 18px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #526273; }
+      .number { font: 700 22px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #ffffff; }
+      .arrow { stroke: #2aa6b8; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .small { font: 500 17px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #667789; }
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M 0 0 L 12 7 L 0 14 z" fill="#2aa6b8"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">ハードウェア開発は「順番に不確実性を減らす」仕事</text>
+  <text class="subtitle" x="82" y="142">全部を理解してから始めるのではなく、小さい実物で一周して、測って、次の版で直す。</text>
+
+  <rect class="lane" x="70" y="205" width="1460" height="560" rx="28"/>
+
+  <g transform="translate(115,250)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#2aa6b8"/>
+    <text class="number" x="29" y="44">1</text>
+    <text class="card-title" x="24" y="86">課題を決める</text>
+    <text class="card-body" x="24" y="123">誰の何を</text>
+    <text class="card-body" x="24" y="151">楽にするか</text>
+  </g>
+
+  <path class="arrow" d="M 345 340 H 425" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(445,250)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#2aa6b8"/>
+    <text class="number" x="29" y="44">2</text>
+    <text class="card-title" x="24" y="86">開発ボード</text>
+    <text class="card-body" x="24" y="123">ESP32 / Pico</text>
+    <text class="card-body" x="24" y="151">まず動かす</text>
+  </g>
+
+  <path class="arrow" d="M 675 340 H 755" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(775,250)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#2aa6b8"/>
+    <text class="number" x="29" y="44">3</text>
+    <text class="card-title" x="24" y="86">CAD / 3D印刷</text>
+    <text class="card-body" x="24" y="123">入るか</text>
+    <text class="card-body" x="24" y="151">固定できるか</text>
+  </g>
+
+  <path class="arrow" d="M 1005 340 H 1085" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(1105,250)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#2aa6b8"/>
+    <text class="number" x="29" y="44">4</text>
+    <text class="card-title" x="24" y="86">KiCadで基板</text>
+    <text class="card-body" x="24" y="123">回路図から</text>
+    <text class="card-body" x="24" y="151">PCBへ</text>
+  </g>
+
+  <path class="arrow" d="M 1215 450 V 505 H 345 V 545" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(115,565)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#f0a43a"/>
+    <text class="number" x="29" y="44">5</text>
+    <text class="card-title" x="24" y="86">ファームウェア</text>
+    <text class="card-body" x="24" y="123">読む・動かす</text>
+    <text class="card-body" x="24" y="151">ログを出す</text>
+  </g>
+
+  <path class="arrow" d="M 345 655 H 425" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(445,565)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#f0a43a"/>
+    <text class="number" x="29" y="44">6</text>
+    <text class="card-title" x="24" y="86">Ubuntuサーバー</text>
+    <text class="card-body" x="24" y="123">ログ保存</text>
+    <text class="card-body" x="24" y="151">可視化・更新</text>
+  </g>
+
+  <path class="arrow" d="M 675 655 H 755" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(775,565)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#f0a43a"/>
+    <text class="number" x="29" y="44">7</text>
+    <text class="card-title" x="24" y="86">測定・検証</text>
+    <text class="card-body" x="24" y="123">電圧・通信</text>
+    <text class="card-body" x="24" y="151">温度・耐久</text>
+  </g>
+
+  <path class="arrow" d="M 1005 655 H 1085" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(1105,565)">
+    <rect class="card" x="0" y="0" width="220" height="180" rx="18"/>
+    <circle cx="35" cy="36" r="20" fill="#f0a43a"/>
+    <text class="number" x="29" y="44">8</text>
+    <text class="card-title" x="24" y="86">小ロット製造</text>
+    <text class="card-body" x="24" y="123">検査治具</text>
+    <text class="card-body" x="24" y="151">保守まで設計</text>
+  </g>
+
+  <text class="small" x="96" y="820">ポイント: 最初は製品ではなく「開発の流れを練習する小さい実物」を作る。</text>
+</svg>
