@@ -31,8 +31,24 @@ function escapeHtml(value = "") {
 
 function renderInline(value = "") {
   return escapeHtml(value)
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a class="inline-link" href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+}
+
+function renderListItem(value = "", type = "ul") {
+  const task = value.match(/^\[( |x|X)\]\s+(.+)$/);
+  if (task) {
+    const checked = task[1].toLowerCase() === "x";
+    return `
+      <li class="task-list-item ${checked ? "checked" : ""}">
+        <span class="task-box" aria-hidden="true"></span>
+        <span>${renderInline(task[2])}</span>
+      </li>
+    `;
+  }
+
+  return `<li class="${type === "ol" ? "ordered-item" : ""}">${renderInline(value)}</li>`;
 }
 
 function parseMediaLine(value = "") {
@@ -227,7 +243,7 @@ function renderMarkdown(markdown = "", entry = {}) {
         html.push("<ul>");
         listType = "ul";
       }
-      html.push(`<li>${renderInline(bullet[1])}</li>`);
+      html.push(renderListItem(bullet[1], "ul"));
       continue;
     }
 
@@ -238,7 +254,7 @@ function renderMarkdown(markdown = "", entry = {}) {
         html.push("<ol>");
         listType = "ol";
       }
-      html.push(`<li>${renderInline(ordered[1])}</li>`);
+      html.push(renderListItem(ordered[1], "ol"));
       continue;
     }
 
