@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">推論ハードウェアのボトルネック</title>
+  <desc id="desc">長い推論トークン、メモリ帯域、速度、コストがAIエージェントの実用性を決める構造。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="76" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">長く考えるAIほど、推論ハードウェアがボトルネックになる</text>
+  <text x="66" y="116" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">価値のあるAIエージェントは、短い返答ではなく、長い探索と検証を高速に回す必要がある。</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="84" y="204" width="220" height="140" rx="14" fill="#e8edf8" stroke="#98a9cf" stroke-width="2"/>
+    <text x="128" y="258" fill="#253c67" font-size="24" font-weight="700">難しい仕事</text>
+    <text x="120" y="296" fill="#2f456f" font-size="17">研究、コード、創薬</text>
+    <text x="120" y="324" fill="#2f456f" font-size="17">材料探索、設計</text>
+
+    <rect x="390" y="204" width="220" height="140" rx="14" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <text x="430" y="258" fill="#5c4515" font-size="24" font-weight="700">長い推論</text>
+    <text x="428" y="296" fill="#604a20" font-size="17">仮説、探索、検証</text>
+    <text x="428" y="324" fill="#604a20" font-size="17">大量の中間トークン</text>
+
+    <rect x="696" y="204" width="220" height="140" rx="14" fill="#f2e8ef" stroke="#c49ab4" stroke-width="2"/>
+    <text x="734" y="258" fill="#653a55" font-size="24" font-weight="700">メモリ帯域</text>
+    <text x="734" y="296" fill="#6b455d" font-size="17">重み、KV cache</text>
+    <text x="734" y="324" fill="#6b455d" font-size="17">長いcontext</text>
+
+    <rect x="1002" y="204" width="220" height="140" rx="14" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <text x="1044" y="258" fill="#173d34" font-size="24" font-weight="700">実用性</text>
+    <text x="1038" y="296" fill="#27483f" font-size="17">速い、安い</text>
+    <text x="1038" y="324" fill="#27483f" font-size="17">同時に回せる</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M308 274 H380"/>
+    <path d="M614 274 H686"/>
+    <path d="M920 274 H992"/>
+  </g>
+
+  <rect x="116" y="452" width="480" height="150" rx="16" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+  <text x="150" y="502" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="24" font-weight="700">40 tokens/secの場合</text>
+  <text x="150" y="542" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">1億tokens = 約28.9日</text>
+  <text x="150" y="575" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">長い知的作業は現実時間で詰まる</text>
+
+  <rect x="684" y="452" width="480" height="150" rx="16" fill="#173d34"/>
+  <text x="718" y="502" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="24" font-weight="700">1,200 tokens/secの場合</text>
+  <text x="718" y="542" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">1億tokens = 約23.1時間</text>
+  <text x="718" y="575" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">仕事の単位そのものが変わる</text>
+</svg>
