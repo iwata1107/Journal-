@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">RADAR型の店舗Physical AI</title>
+  <desc id="desc">RFIDタグ、天井センサー、AI、在庫DB、店舗スタッフ、EC、POSがつながるPhysical AI店舗の構造。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="76" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">店舗をPhysical AI化する基本構造</text>
+  <text x="66" y="116" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">商品をリアルタイムに観測し、POS、EC、スタッフ、補充判断に戻す。</text>
+
+  <rect x="84" y="170" width="480" height="430" rx="22" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+  <text x="124" y="222" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="26" font-weight="700">実店舗</text>
+  <rect x="132" y="286" width="100" height="72" rx="10" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+  <rect x="266" y="286" width="100" height="72" rx="10" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+  <rect x="400" y="286" width="100" height="72" rx="10" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+  <text x="149" y="330" fill="#604a20" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="16">商品+RFID</text>
+  <text x="283" y="330" fill="#604a20" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="16">商品+RFID</text>
+  <text x="417" y="330" fill="#604a20" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="16">商品+RFID</text>
+  <rect x="154" y="435" width="322" height="92" rx="14" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+  <text x="220" y="488" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="22" font-weight="700">天井センサー/リーダー</text>
+
+  <rect x="674" y="188" width="230" height="125" rx="14" fill="#e8edf8" stroke="#98a9cf" stroke-width="2"/>
+  <text x="731" y="240" fill="#253c67" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="24" font-weight="700">AI推定</text>
+  <text x="716" y="274" fill="#2f456f" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="16">何が / どこに / いつ動いたか</text>
+
+  <rect x="674" y="420" width="230" height="125" rx="14" fill="#173d34"/>
+  <text x="724" y="472" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="24" font-weight="700">在庫DB</text>
+  <text x="718" y="506" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="16">SKU / EPC / 位置 / 状態</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="1002" y="164" width="190" height="90" rx="12" fill="#f2e8ef" stroke="#c49ab4" stroke-width="2"/>
+    <text x="1041" y="218" fill="#653a55" font-size="22" font-weight="700">スタッフ</text>
+    <rect x="1002" y="304" width="190" height="90" rx="12" fill="#e8f0d9" stroke="#9ebd76" stroke-width="2"/>
+    <text x="1068" y="358" fill="#496820" font-size="22" font-weight="700">EC</text>
+    <rect x="1002" y="444" width="190" height="90" rx="12" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <text x="1064" y="498" fill="#5c4515" font-size="22" font-weight="700">POS</text>
+    <rect x="1002" y="584" width="190" height="90" rx="12" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="1028" y="638" fill="#333333" font-size="22" font-weight="700">自動チェックアウト</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M315 360 V425"/>
+    <path d="M566 482 H664"/>
+    <path d="M789 314 V410"/>
+    <path d="M906 482 H992"/>
+    <path d="M904 482 C960 482 950 209 992 209"/>
+    <path d="M904 482 C960 482 950 349 992 349"/>
+    <path d="M904 482 C960 482 950 629 992 629"/>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">RADARからzerotryへの示唆</title>
+  <desc id="desc">RADARの大規模店舗インフラから、zerotryが小さく始めるRFIDステーション、検品、探索、読取ゲートへの示唆。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="76" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">zerotryは、小さいPhysical AIの入口から始められる</text>
+  <text x="66" y="116" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">RADARが大規模店舗全体を狙うなら、zerotryはタグ発行・検品・探索・読取ゲートから始める。</text>
+
+  <rect x="92" y="192" width="470" height="386" rx="22" fill="#173d34"/>
+  <text x="134" y="252" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="28" font-weight="700">RADAR型</text>
+  <text x="134" y="294" fill="#d8efe7" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">大規模小売の店舗全体インフラ</text>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" fill="#d8efe7" font-size="17">
+    <text x="134" y="352">天井センサー</text>
+    <text x="134" y="386">RFID + AI + computer vision</text>
+    <text x="134" y="420">店舗全体の位置推定</text>
+    <text x="134" y="454">1,400店舗以上の展開</text>
+    <text x="134" y="488">自動チェックアウトも視野</text>
+  </g>
+
+  <rect x="718" y="192" width="470" height="386" rx="22" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+  <text x="760" y="252" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="28" font-weight="700">zerotry型</text>
+  <text x="760" y="294" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">中小店舗/倉庫の導入しやすい入口</text>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" fill="#333333" font-size="17">
+    <text x="760" y="352">POS横タグ発行ステーション</text>
+    <text x="760" y="386">バックヤード検品ステーション</text>
+    <text x="760" y="420">出荷前読取ゲート</text>
+    <text x="760" y="454">スタッフ向け探索アプリ</text>
+    <text x="760" y="488">在庫ズレ検知AI</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M576 386 H704"/>
+  </g>
+
+  <rect x="202" y="640" width="876" height="70" rx="16" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+  <text x="244" y="684" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="22" font-weight="700">共通点: ハードウェアの価値は、現場の「探す・数える・間違える」時間を消すこと。</text>
+</svg>
