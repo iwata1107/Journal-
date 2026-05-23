@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Modalとzerotryの抽象化レイヤー</title>
+  <desc id="desc">ModalがAI実行環境を抽象化するように、zerotryはRFID導入と現場在庫運用の複雑さを抽象化する。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="76" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">強いインフラ企業は、複雑なものを小さく見せる</text>
+  <text x="66" y="116" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">ModalはAI実行環境を抽象化する。zerotryはRFID導入と現場在庫運用を抽象化できる。</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="78" y="180" width="520" height="402" rx="22" fill="#173d34"/>
+    <text x="122" y="244" fill="#ffffff" font-size="30" font-weight="700">Modal</text>
+    <text x="122" y="286" fill="#d8efe7" font-size="18">AI開発の複雑さを吸収する</text>
+
+    <rect x="122" y="336" width="180" height="52" rx="12" fill="#e3f1ec"/>
+    <text x="150" y="369" fill="#173d34" font-size="17" font-weight="700">GPUを使う</text>
+    <rect x="334" y="336" width="180" height="52" rx="12" fill="#e8edf8"/>
+    <text x="362" y="369" fill="#253c67" font-size="17" font-weight="700">推論する</text>
+    <rect x="122" y="414" width="180" height="52" rx="12" fill="#f5ead2"/>
+    <text x="150" y="447" fill="#5c4515" font-size="17" font-weight="700">学習する</text>
+    <rect x="334" y="414" width="180" height="52" rx="12" fill="#f2e8ef"/>
+    <text x="362" y="447" fill="#653a55" font-size="17" font-weight="700">実行環境を作る</text>
+    <text x="122" y="526" fill="#d8efe7" font-size="20" font-weight="700">GPU / container / scaleをAPI化</text>
+
+    <rect x="682" y="180" width="520" height="402" rx="22" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="726" y="244" fill="#173d34" font-size="30" font-weight="700">zerotry</text>
+    <text x="726" y="286" fill="#6b6b63" font-size="18">RFID導入の複雑さを吸収する</text>
+
+    <rect x="726" y="336" width="180" height="52" rx="12" fill="#e3f1ec"/>
+    <text x="754" y="369" fill="#173d34" font-size="17" font-weight="700">タグを発行</text>
+    <rect x="938" y="336" width="180" height="52" rx="12" fill="#e8edf8"/>
+    <text x="966" y="369" fill="#253c67" font-size="17" font-weight="700">商品を読む</text>
+    <rect x="726" y="414" width="180" height="52" rx="12" fill="#f5ead2"/>
+    <text x="754" y="447" fill="#5c4515" font-size="17" font-weight="700">在庫を更新</text>
+    <rect x="938" y="414" width="180" height="52" rx="12" fill="#f2e8ef"/>
+    <text x="966" y="447" fill="#653a55" font-size="17" font-weight="700">ズレを解消</text>
+    <text x="726" y="526" fill="#173d34" font-size="20" font-weight="700">RFID / POS / EC / 現場作業をイベント化</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M610 382 H666"/>
+  </g>
+
+  <rect x="174" y="650" width="932" height="70" rx="16" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+  <text x="218" y="694" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="22" font-weight="700">共通点: 顧客は部品ではなく、複雑さが消えた運用レイヤーにお金を払う。</text>
+</svg>

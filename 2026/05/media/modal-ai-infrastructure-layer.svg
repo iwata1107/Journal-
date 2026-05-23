@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Modalが抽象化するAIインフラ</title>
+  <desc id="desc">GPU確保、コンテナ、スケール、推論、サンドボックス、バッチ、学習を開発者向けのAIインフラAPIとして抽象化する構造。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#fbfbf8"/>
+  <text x="64" y="76" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">Modalは、AIを動かす下回りを開発者向けAPIに変える</text>
+  <text x="66" y="116" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">GPU、コンテナ、スケール、サンドボックス、推論、学習を個別運用ではなくプリミティブとして扱う。</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="72" y="178" width="272" height="410" rx="22" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="112" y="236" fill="#173d34" font-size="27" font-weight="700">開発者</text>
+    <text x="112" y="278" fill="#6b6b63" font-size="17">AIアプリを書きたい</text>
+    <text x="112" y="338" fill="#333333" font-size="17">LLM推論</text>
+    <text x="112" y="374" fill="#333333" font-size="17">AIエージェント</text>
+    <text x="112" y="410" fill="#333333" font-size="17">画像/動画生成</text>
+    <text x="112" y="446" fill="#333333" font-size="17">RL / fine-tuning</text>
+    <text x="112" y="482" fill="#333333" font-size="17">大規模batch</text>
+
+    <rect x="470" y="152" width="340" height="466" rx="24" fill="#173d34"/>
+    <text x="522" y="218" fill="#ffffff" font-size="31" font-weight="700">Modal</text>
+    <text x="522" y="258" fill="#d8efe7" font-size="17">AI-native compute platform</text>
+    <rect x="522" y="312" width="236" height="48" rx="12" fill="#e3f1ec"/>
+    <text x="552" y="343" fill="#173d34" font-size="17" font-weight="700">Inference</text>
+    <rect x="522" y="374" width="236" height="48" rx="12" fill="#e8edf8"/>
+    <text x="552" y="405" fill="#253c67" font-size="17" font-weight="700">Sandboxes</text>
+    <rect x="522" y="436" width="236" height="48" rx="12" fill="#f5ead2"/>
+    <text x="552" y="467" fill="#5c4515" font-size="17" font-weight="700">Training / RL</text>
+    <rect x="522" y="498" width="236" height="48" rx="12" fill="#f2e8ef"/>
+    <text x="552" y="529" fill="#653a55" font-size="17" font-weight="700">Batch / Notebooks</text>
+
+    <rect x="936" y="178" width="272" height="410" rx="22" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="976" y="236" fill="#173d34" font-size="27" font-weight="700">下回り</text>
+    <text x="976" y="278" fill="#6b6b63" font-size="17">本来は重い運用領域</text>
+    <text x="976" y="338" fill="#333333" font-size="17">GPU capacity</text>
+    <text x="976" y="374" fill="#333333" font-size="17">container runtime</text>
+    <text x="976" y="410" fill="#333333" font-size="17">scheduler</text>
+    <text x="976" y="446" fill="#333333" font-size="17">storage / secrets</text>
+    <text x="976" y="482" fill="#333333" font-size="17">network / routing</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M356 386 H454"/>
+    <path d="M824 386 H922"/>
+  </g>
+
+  <rect x="190" y="654" width="900" height="70" rx="16" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+  <text x="236" y="698" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="22" font-weight="700">価値: インフラ設定ではなく、AIチームの試行錯誤速度を売っている。</text>
+</svg>
