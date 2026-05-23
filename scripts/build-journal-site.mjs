@@ -93,7 +93,7 @@ for (const file of files) {
   });
 }
 
-entries.sort((a, b) => b.date.localeCompare(a.date));
+entries.sort((a, b) => b.date.localeCompare(a.date) || b.slug.localeCompare(a.slug));
 
 const output = `window.JOURNAL_ENTRIES = ${JSON.stringify(entries, null, 2)};\n`;
 await writeFile(outputPath, output, "utf8");

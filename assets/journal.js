@@ -471,6 +471,6 @@ window.addEventListener("hashchange", () => {
   selectEntry(location.hash.slice(1), false);
 });
 
-state.entries.sort((a, b) => b.date.localeCompare(a.date));
+state.entries.sort((a, b) => b.date.localeCompare(a.date) || b.slug.localeCompare(a.slug));
 render();
 selectEntry(location.hash.slice(1) || state.entries[0]?.slug);
