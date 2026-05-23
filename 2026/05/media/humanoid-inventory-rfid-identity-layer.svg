@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">ヒューマノイド時代の在庫認識レイヤー</title>
+  <desc id="desc">Computer VisionとLiDARは位置や姿勢を認識し、RFIDはSKU、JAN、EPC、個体IDを確定する。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#27483f"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f7f7f4"/>
+  <text x="64" y="76" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="34" font-weight="700">ロボットの目と、在庫のIDは別レイヤー</text>
+  <text x="66" y="116" fill="#6b6b63" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="18">CV/LiDARは姿勢と位置を読む。RFIDはSKU、JAN、EPC、個体IDを読む。</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif">
+    <rect x="82" y="176" width="390" height="410" rx="22" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="124" y="236" fill="#173d34" font-size="28" font-weight="700">棚の上の商品</text>
+    <rect x="134" y="304" width="112" height="146" rx="12" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <rect x="264" y="304" width="112" height="146" rx="12" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+    <text x="164" y="370" fill="#173d34" font-size="22" font-weight="700">S</text>
+    <text x="294" y="370" fill="#173d34" font-size="22" font-weight="700">M</text>
+    <text x="132" y="492" fill="#6b6b63" font-size="17">見た目はほぼ同じ</text>
+    <text x="132" y="524" fill="#6b6b63" font-size="17">でもJAN/SKUは違う</text>
+
+    <rect x="530" y="160" width="320" height="190" rx="20" fill="#173d34"/>
+    <text x="574" y="222" fill="#ffffff" font-size="27" font-weight="700">CV / LiDAR</text>
+    <text x="574" y="268" fill="#d8efe7" font-size="18">位置 / 姿勢 / 形状</text>
+    <text x="574" y="302" fill="#d8efe7" font-size="18">掴めるか / どこにあるか</text>
+
+    <rect x="530" y="422" width="320" height="190" rx="20" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+    <text x="574" y="484" fill="#173d34" font-size="27" font-weight="700">RFID</text>
+    <text x="574" y="530" fill="#5c4515" font-size="18">JAN / SKU / EPC</text>
+    <text x="574" y="564" fill="#5c4515" font-size="18">個体ID / 在庫イベント</text>
+
+    <rect x="932" y="202" width="250" height="116" rx="16" fill="#e8edf8" stroke="#98a9cf" stroke-width="2"/>
+    <text x="982" y="252" fill="#253c67" font-size="23" font-weight="700">ヒューマノイド</text>
+    <text x="980" y="286" fill="#2f456f" font-size="16">見る / 掴む / 運ぶ</text>
+
+    <rect x="932" y="464" width="250" height="116" rx="16" fill="#f5ead2" stroke="#d5b66f" stroke-width="2"/>
+    <text x="992" y="514" fill="#604a20" font-size="23" font-weight="700">在庫DB</text>
+    <text x="964" y="548" fill="#604a20" font-size="16">正しいSKUを台帳へ反映</text>
+  </g>
+
+  <g stroke="#27483f" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M474 318 H520"/>
+    <path d="M474 494 H520"/>
+    <path d="M852 256 H922"/>
+    <path d="M852 518 H922"/>
+    <path d="M1057 318 V454"/>
+  </g>
+
+  <rect x="170" y="660" width="940" height="62" rx="16" fill="#e3f1ec" stroke="#9dc8ba" stroke-width="2"/>
+  <text x="222" y="700" fill="#173d34" font-family="-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif" font-size="21" font-weight="700">ロボットは目で動き、RFIDで在庫を確定する。</text>
+</svg>
